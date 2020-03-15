@@ -59,10 +59,12 @@
 								<form action="https://getsimpleform.com/messages?form_api_token=af7e4b6073c3da42f6bde0632b09a46f" method="post">
 									<div class="row gtr-uniform">
 										<div class="col-6 col-12-xsmall">
-											<input type="text" name="name" id="name" value="" placeholder="Name" />
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" value=""/>
 										</div>
 										<div class="col-6 col-12-xsmall">
-											<input type="text" name="email" id="email" value="" placeholder="Email" />
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" value=""/>
 										</div>
 										<!-- Break -->
 										<div class="col-12">
@@ -74,6 +76,10 @@
 												<option value="Spoken Word">Spoken Word</option>
 												<option value="Cover Art">Cover Art</option>
 											</select>
+										</div>
+										<div class="col-12">
+											<label for="title">Title of Piece</label>
+											<input type="text" name="title" id="title" value=""/>
 										</div>
 										<!-- Break -->
 										<!--<div class="col-4 col-12-small">
@@ -99,17 +105,22 @@
 										</div>-->
 										<!-- Break -->
 										<div class="col-12">
-											<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											<label for="bio">Brief Author Bio (no more than two sentences)</label>
+											<textarea name="bio" id="bio" rows="6"></textarea>
+										</div>
+										<div class="col-12">
+											<label for="submission">Submission File</label>
+											<input type="file" id="submission" name="submission">
 										</div>
 										<!-- Break -->
 										<div class="col-12">
 											<ul class="actions">
 												<li><input type="submit" value="Submit" class="primary" /></li>
-												<li><input type="reset" value="Reset" /></li>
 											</ul>
 										</div>
 									</div>
 								</form>
+								<p><i>Upon submission you will be redirected to our payment site.</i></p>
 
 							</section>
 

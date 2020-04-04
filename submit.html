@@ -60,7 +60,7 @@
 								<p>We ask that all writing be in 12 pt. Times New Roman. With the exception of poetry, which may be submitted single-spaced, we ask that all other writing be submitted double-spaced.</p>
 								<p>Unfortunately, we do not currently accept work outside the forms listed above. Work we <b>do not</b> currently accept include films, photography, screenplays, and mixed media.</p>
 								<p>In addition to your submission, we ask for a $5 submission fee and a short 2-3 sentence author bio stating your name, grade level, hobbies, and any inspirations for your creative work.</p>
-								<p>Please direct all questions and inquiries to <a href="mailto:anserjournal@gmail.com">anserjournal@gmail.com</a>.</p> 
+								<p>Please direct all questions and inquiries to <a href="mailto:anserjournal@gmail.com">anserjournal@gmail.com</a>.</p>
 								<hr />
 
 								<h2>Submit to Us</h2>
@@ -124,6 +124,51 @@
 											<input type="file" id="submission" name="submission">
 										</div>
 										<!-- Break -->
+										<!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+  id="checkout-button-sku_H28mwaaQMgFBoi"
+  role="link"
+>
+  Checkout
+</button>
+
+<div id="error-message"></div>
+
+<script>
+(function() {
+  var stripe = Stripe('pk_live_eRWZT0uPB0lqC9Ah8CsWlEeV00GKsU8cvl');
+
+  var checkoutButton = document.getElementById('checkout-button-sku_H28mwaaQMgFBoi');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      items: [{sku: 'sku_H28mwaaQMgFBoi', quantity: 1}],
+
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: window.location.protocol + '//anserjournal.org/success',
+      cancelUrl: window.location.protocol + '//anserjournal.org/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
+</script>
+
 										<div class="col-12">
 											<ul class="actions">
 												<li><input type="submit" value="Submit" class="primary" /></li>

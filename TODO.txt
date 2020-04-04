@@ -1,0 +1,2 @@
+1. Make spacing even on submit page
+2. Deny submission requests if form is not completely filled out

@@ -125,26 +125,27 @@
 										</div>
 										<!-- Break -->
 
-
+								<script src="https://js.stripe.com/v3"></script>
 										<div class="col-12">
 											<ul class="actions">
-												<li><button type="submit" value="Submit" class="primary" /></li>
+												<li><button type="submit" value="Submit" class="primary" id="checkout-button-sku_H28mwaaQMgFBoi"
+												role="link"/>Submit</button></li>
 											</ul>
 										</div>
 									</div>
 								</form>
 								<p><i>Upon submission you will be redirected to our payment site.</i></p>
 								<!-- Load Stripe.js on your website. -->
-								<script src="https://js.stripe.com/v3"></script>
+
 
 								<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
-								<button
+								<!--<button
 									style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
 									id="checkout-button-sku_H28mwaaQMgFBoi"
 									role="link"
 								>
 									Checkout
-								</button>
+								</button>-->
 
 								<div id="error-message"></div>
 

@@ -1,5 +1,3 @@
-# anserjournal
-
 Website code for literary journal I ran in high school, Anser Journal: https://anserjournal.org
 
 Massively by HTML5 UP
